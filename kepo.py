@@ -91,7 +91,7 @@ class Kepo(object):
 		if lengkap:
 			self.insertLog(data)
 			active_url=self.getURL(PROYEK)
-			uri=self.keyuri+NPM+'%'+NILAI+'%'+KET
+			uri=self.keyuri+NPM+'%'+NILAI+'%'+KET+'%'+pertemuan
 			msg=self.makeit16(uri)
 			obj=AES.new(self.key,AES.MODE_CBC,self.iv)
 			cp = obj.encrypt(msg)
