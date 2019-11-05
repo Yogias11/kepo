@@ -45,6 +45,7 @@ class Kepo(object):
 		"semester" : "20181"
 		}
 		self.apigithub = "https://api.github.com/repos/USERNAME/REPONAME/issues?sort=created&direction=desc"
+		self.apigithubclosed = "https://api.github.com/repos/USERNAME/REPONAME/issues?state=closed"
 		self.logname = 'datamahasiswa'
 		self.client_secret = config.client_secret
 
@@ -54,7 +55,13 @@ class Kepo(object):
 		urlgithub=urlgithub.replace('REPONAME',reponame)
 		response = requests.get(urlgithub)
 		json_data = json.loads(response.text)
-		jumlah=len(json_data)//10
+		urlgithubclosed=self.apigithubclosed
+		urlgithubclosed=urlgithubclosed.replace('USERNAME',username)
+		urlgithubclosed=urlgithubclosed.replace('REPONAME',reponame)
+		response = requests.get(urlgithubclosed)
+		json_dataclosed = json.loads(response.text)
+		jumlah=len(json_data)+len(json_dataclosed)
+		jumlah=jumlah//10
 		if jumlah >= int(pertemuan):
 			return True
 		else:
