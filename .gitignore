@@ -1,6 +1,6 @@
 config.py
 testing.py
-client_secret.json
+#client_secret.json
 *.png
 *.jpg
 .DS_Store
