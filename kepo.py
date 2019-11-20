@@ -15,12 +15,10 @@ from selenium.webdriver.chrome.options import Options
 import time
 from datetime import datetime
 
-import config
-
 class Kepo(object):
 	def __init__(self):
-		self.key = config.key
-		self.iv = config.iv
+		self.key = key
+		self.iv = iv
 		self.keyuri = "key"
 		self.active_url8 = "https://cucunguk.herokuapp.com/" 
 		self.active_url7 = "https://proyek3d4ti.herokuapp.com/"
@@ -47,7 +45,7 @@ class Kepo(object):
 		self.apigithub = "https://api.github.com/repos/USERNAME/REPONAME/issues?sort=created&direction=desc&per_page=100"
 		self.apigithubclosed = "https://api.github.com/repos/USERNAME/REPONAME/issues?state=closed&per_page=100"
 		self.logname = 'datamahasiswa'
-		self.client_secret = config.client_secret
+		self.client_secret = client_secret
 
 	def cukupIssues(self,username,reponame,pertemuan):
 		urlgithub=self.apigithub
