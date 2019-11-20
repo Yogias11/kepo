@@ -44,8 +44,8 @@ class Kepo(object):
 		"kode":"TI43233",
 		"semester" : "20181"
 		}
-		self.apigithub = "https://api.github.com/repos/USERNAME/REPONAME/issues?sort=created&direction=desc"
-		self.apigithubclosed = "https://api.github.com/repos/USERNAME/REPONAME/issues?state=closed"
+		self.apigithub = "https://api.github.com/repos/USERNAME/REPONAME/issues?sort=created&direction=desc&per_page=100"
+		self.apigithubclosed = "https://api.github.com/repos/USERNAME/REPONAME/issues?state=closed&per_page=100"
 		self.logname = 'datamahasiswa'
 		self.client_secret = config.client_secret
 
